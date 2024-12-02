@@ -55,6 +55,7 @@ function university (person, degreeType){
         person.degree="masters";
         person.studentLoan=40000;
     }
+
 }
 university(persons[3],"bachelors");
 console.log(persons[3]);
@@ -62,7 +63,10 @@ console.log(persons[3]);
 
 
 
- // I got a little help from chatgpt on the 7th and bonus questions. !!
+
+
+
+
 
 // 7. API TIME!
 // Read the documentation of this dog API: https://dog.ceo/dog-api/documentation/
@@ -70,13 +74,19 @@ console.log(persons[3]);
 //feel free to change the ID of the images and/or add css.
 //------------------------------------------------------------------------------------------------------------------------------------------------
 
+//BONUS!!
+//create a way for you to change the breed of the dogs displayed on your page
+//------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 async function fetchDogs(breed = "retriever") {
     const url = `https://dog.ceo/api/breed/${breed}/images/random/4`;
   
     try {
       const response = await fetch(url);
       if (!response.ok) {
-        throw new Error("Breed not found or network error.");
+        throw new Error("Breed not found or network error."); 
+        
       }
       const data = await response.json();
   
@@ -85,30 +95,23 @@ async function fetchDogs(breed = "retriever") {
       document.getElementById("dog2").src = data.message[1];
       document.getElementById("dog3").src = data.message[2];
       document.getElementById("dog4").src = data.message[3];
-    } catch (error) {
+    } catch (error) { 
       console.error("Error fetching dog images:", error);
       alert("Error: " + error.message);
     }
   }
+  document.getElementById("fetchButton").addEventListener("click", () => {
+    const breedSelect = document.getElementById("breedSelect").value; 
+    fetchDogs(breedSelect);
+  });
+  
   
   document.addEventListener("DOMContentLoaded", () => {
     fetchDogs(); 
   });
 
-//BONUS!!
-//create a way for you to change the breed of the dogs displayed on your page
-//------------------------------------------------------------------------------------------------------------------------------------------------
 
-function changeBreed() {
-    const breedInput = prompt("Enter the breed of dog you want to see:");
-    if (breedInput) {
-      fetchDogs(breedInput.toLowerCase().trim());
-    }
-  }
+
+
+
   
-  
-  const button = document.createElement("button");
-  button.textContent = "Change Breed";
-  button.style.marginTop = "20px";
-  button.onclick = changeBreed;
-  document.body.appendChild(button);

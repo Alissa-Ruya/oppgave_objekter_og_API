@@ -1,48 +1,69 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f0f8ff; 
-    margin: 0;
-    padding: 20px;
-  }
-  
-  h2 {
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  main {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px; 
-  }
-  
-  img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border: 5px solid #ccc;
-    border-radius: 15px; 
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  img:hover {
-    transform: scale(1.1); 
-  }
-  
-  button {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f85bfb;
+  margin: 0;
+  padding: 20px;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 18px;
+  color: #555;
+}
+
+#breedSelect {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ed6fdc;
+  border-radius: 5px;
+  margin-right: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+#fetchButton {
+  background-color: #b1099a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+#fetchButton:hover {
+  background-color: #57034c; 
+}
+
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover; 
+  border: 5px solid #b1099a;
+  border-radius: 15px; 
+  transition: transform 0.3s ease-in-out; 
+}
+
+img:hover {
+  transform: scale(1.1); 
+}
+
+
+label, #breedSelect, #fetchButton {
+  margin-bottom: 15px;
+}
